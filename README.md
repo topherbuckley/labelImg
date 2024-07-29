@@ -8,3 +8,8 @@ As labelImg can use two separate directories for images and xml or otherwise lab
 (not just images) to /data in the container.
 
 The DISPLAY and X11 mappings are necessary to display the GUI.
+
+If you want to update the predefined classes, you can mount a file to /data/predefined_classes.txt.
+e.g.
+`docker run -e DISPLAY=$DISPLAY -v .:/data -v /tmp/.X11-unix:/tmp/.X11-unix -v /path/to/predefined_classes.txt:/labelImg/data/predefined_classes.txt topher217/labelimg:latest`
+
